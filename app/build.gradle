@@ -1,12 +1,15 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 25
     buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "xyz.anc4g.places"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -17,6 +20,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
 }
 
 dependencies {
@@ -24,7 +30,48 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+    //Kotlin
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    //Support Library
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support.constraint:constraint-layout:1.0.2"
+
+    //Firebase
+    compile "com.google.firebase:firebase-auth:$rootProject.ext.firebaseVersion"
+    compile "com.google.firebase:firebase-database:$rootProject.ext.firebaseVersion"
+    compile "com.google.firebase:firebase-crash:$rootProject.ext.firebaseVersion"
+    compile "com.firebase:geofire-android:$rootProject.ext.geofireVersion"
+    compile "com.google.firebase:firebase-ads:$rootProject.ext.firebaseVersion"
+
+    //Google Play Services
+    compile "com.google.android.gms:play-services-maps:$rootProject.ext.playServicesVersion"
+    compile "com.google.android.gms:play-services-location:$rootProject.ext.playServicesVersion"
+    compile "com.google.android.gms:play-services-places:$rootProject.ext.playServicesVersion"
+
+    //Mapzen
+    compile "com.mapzen:mapzen-android-sdk:$rootProject.ext.mapzenVersion"
+
+    // RxJava & RxAndroid
+    compile "io.reactivex:rxjava:$rootProject.ext.rxJavaVersion"
+    compile "io.reactivex:rxandroid:$rootProject.ext.rxAndroidVersion"
+
+    // Networking
+    compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.retrofit2:converter-moshi:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.picasso:picasso:$rootProject.ext.picassoVersion"
+
+    // Dagger 2
+    compile "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
+    provided "org.glassfish:javax.annotation:10.0-b28"
+
+    // Tests
+    testCompile "junit:junit:$rootProject.ext.junitVersion"
+    testCompile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+
+apply plugin: 'com.google.gms.google-services'
+repositories {
+    mavenCentral()
 }
