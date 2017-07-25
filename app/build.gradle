@@ -35,7 +35,6 @@ dependencies {
 
     //Support Library
     compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
-    compile "com.android.support.constraint:constraint-layout:1.0.2"
 
     //Firebase
     compile "com.google.firebase:firebase-auth:$rootProject.ext.firebaseVersion"
@@ -64,11 +63,12 @@ dependencies {
     // Dagger 2
     compile "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
     kapt "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
-    provided "org.glassfish:javax.annotation:10.0-b28"
 
     // Tests
     testCompile "junit:junit:$rootProject.ext.junitVersion"
     testCompile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
 }
 
 apply plugin: 'com.google.gms.google-services'
