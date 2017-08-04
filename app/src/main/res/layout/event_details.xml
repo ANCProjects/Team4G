@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    tools:context=".presentation.EventDetails">
 
     <include layout="@layout/appbar" />
     <!-- End of appbar -->
@@ -24,8 +25,8 @@
             <!-- Event details cardview -->
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_marginBottom="@dimen/dimen_8dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_8dp"
                 app:cardCornerRadius="0dp"
                 app:cardElevation="1dp">
 
@@ -39,46 +40,46 @@
                         android:id="@+id/eventTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        tools:textSize="@dimen/text_20sp"
-                        tools:textStyle="bold"
+                        tools:text="This should be a long title like this example that I'm showing."
                         tools:textColor="@color/textTitle"
-                        tools:text="This should be a long title like this example that I'm showing." />
+                        tools:textSize="@dimen/text_20sp"
+                        tools:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/eventCategory"
                         android:layout_width="match_parent"
-                        tools:textColor="@color/textSubtitle"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/ic_donut_small_black_24dp"
                         android:drawableStart="@drawable/ic_donut_small_black_24dp"
-                        android:padding="@dimen/dimen_4dp"
-                        tools:textSize="@dimen/text_15sp"
                         android:gravity="center_vertical"
-                        tools:text="Wedding" />
+                        android:padding="@dimen/dimen_4dp"
+                        tools:text="Wedding"
+                        tools:textColor="@color/textSubtitle"
+                        tools:textSize="@dimen/text_15sp" />
 
                     <TextView
                         android:id="@+id/eventDate"
-                        tools:textColor="@color/textSubtitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@android:drawable/ic_menu_my_calendar"
                         android:drawableStart="@drawable/ic_today_black_24dp"
-                        android:padding="@dimen/dimen_4dp"
                         android:gravity="center_vertical"
-                        tools:textSize="@dimen/text_15sp"
-                        tools:text="30 August 2017" />
+                        android:padding="@dimen/dimen_4dp"
+                        tools:text="30 August 2017"
+                        tools:textColor="@color/textSubtitle"
+                        tools:textSize="@dimen/text_15sp" />
 
                     <TextView
                         android:id="@+id/eventAddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        tools:textColor="@color/textSubtitle"
                         android:drawableLeft="@drawable/ic_place_black_24dp"
                         android:drawableStart="@drawable/ic_place_black_24dp"
-                        android:padding="@dimen/dimen_4dp"
-                        tools:textSize="@dimen/text_15sp"
                         android:gravity="center_vertical"
-                        tools:text="No 3o white house road" />
+                        android:padding="@dimen/dimen_4dp"
+                        tools:text="No 3o white house road"
+                        tools:textColor="@color/textSubtitle"
+                        tools:textSize="@dimen/text_15sp" />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
@@ -87,9 +88,9 @@
                 android:id="@+id/suggestionsCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardElevation="2dp"
                 android:layout_marginBottom="@dimen/dimen_8dp"
-                app:cardCornerRadius="0dp">
+                app:cardCornerRadius="0dp"
+                app:cardElevation="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -101,14 +102,14 @@
                         android:id="@+id/suggestionsHeader"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        tools:textSize="@dimen/text_15sp"
-                        tools:text="Some events in $category" />
-                    
+                        android:text="Some events in this category"
+                        tools:textSize="@dimen/text_15sp" />
+
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/suggestionsRV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
-                
+
                 </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>
