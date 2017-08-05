@@ -41,9 +41,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:text="This should be a long title like this example that I'm showing."
-                        tools:textColor="@color/textTitle"
-                        tools:textSize="@dimen/text_20sp"
-                        tools:textStyle="bold" />
+                        android:textColor="@color/textTitle"
+                        android:textSize="@dimen/text_20sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/eventCategory"
@@ -54,8 +54,8 @@
                         android:gravity="center_vertical"
                         android:padding="@dimen/dimen_4dp"
                         tools:text="Wedding"
-                        tools:textColor="@color/textSubtitle"
-                        tools:textSize="@dimen/text_15sp" />
+                        android:textColor="@color/textSubtitle"
+                        android:textSize="@dimen/text_15sp" />
 
                     <TextView
                         android:id="@+id/eventDate"
@@ -66,8 +66,8 @@
                         android:gravity="center_vertical"
                         android:padding="@dimen/dimen_4dp"
                         tools:text="30 August 2017"
-                        tools:textColor="@color/textSubtitle"
-                        tools:textSize="@dimen/text_15sp" />
+                        android:textColor="@color/textSubtitle"
+                        android:textSize="@dimen/text_15sp" />
 
                     <TextView
                         android:id="@+id/eventAddress"
@@ -78,8 +78,8 @@
                         android:gravity="center_vertical"
                         android:padding="@dimen/dimen_4dp"
                         tools:text="No 3o white house road"
-                        tools:textColor="@color/textSubtitle"
-                        tools:textSize="@dimen/text_15sp" />
+                        android:textColor="@color/textSubtitle"
+                        android:textSize="@dimen/text_15sp" />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
@@ -103,7 +103,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Some events in this category"
-                        tools:textSize="@dimen/text_15sp" />
+                        android:textSize="@dimen/text_15sp" />
 
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/suggestionsRV"
